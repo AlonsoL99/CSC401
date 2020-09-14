@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Luis Diaz/Projects/CSC401/Project01</title>
+		<title>Luis Diaz/Projects/CSC401/Project01/Enter Name</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -18,7 +18,7 @@
                     <script>
                         function getName(){
                         console.log(document)
-                        document.EnterName.Greeting.value= "Greetings " +document.EnterName.myName.value + "!"
+                        document.EnterName.Greeting.value= document.EnterName.myName.value 
                         }
                     </script>
                     <h2>Enter name:</h2>
@@ -37,24 +37,34 @@
                                      <tr>
                                         <td>
                                             <b>2.</b>
-                                        </td>
-                                        <td>Click Button When Done:</td>
+										</td>
+										<td>Select Your Personalized Greeting:</td>
                                         <td>
-                                        	<input type="button" value="Done" onclick="getName()">
+                                            <select required>
+												<option value="1"> Good morning. Have a good day today!</option>
+												<option value="2"> Good afternoon. How are you today?</option>
+												<option value="3"> Good evening. How was your day?</option>
+												<option value="4"> Grettings!</option>
+												<option value="5"> Hello! How are you doing?</option>
+                                            </select>
                                         </td>
                                     </tr>
                                      <tr>
                                         <td>
                                             <b>3.</b>
                                         </td>
-                                        <td>Select Your Personalized Greeting:</td>
+                                        <td>Click Button When Done:</td>
                                         <td>
-                                            <input type="text" name="Greeting" size="40">
+                                        	<input type="button" value="Done" onclick="getName()">
                                         </td>
 									 </tr>
 									 <tr>
 										 <td>
 											 <b>4.</b>
+										 </td>
+										 <td>Here's Your Personalized Greeting:</td>
+										 <td>
+											 <input type="text" name="Greeting" size="40">
 										 </td>
 										 
 									 </tr>
