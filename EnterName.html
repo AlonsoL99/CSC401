@@ -2,65 +2,75 @@
 	<head>
 		<title>Luis Diaz/Projects/CSC401/Project01/Enter Name</title>
 	        <script>
-                function getName(){
-                    console.log(document)
-                    document.EnterName.Greeting.value= "Greeting " + document.EnterName.myName.value + "!"
+                var nameVar, greetingsVar;
+                function handleChange() {
+                    if(document.EnterName.name) {
+                        nameVar = document.getElementsByName('name')[0].value
                     }
+                    console.log(document.EnterName)
+                    if(document.EnterName.greeting) {
+                        greetingsVar = document.getElementsByName('greeting')[0].value
+                    }
+                }
+
+                function getGreeting() {
+                    document.getElementsByName('message')[0].value = greetingsVar + " " + nameVar + "!"
+                }
             </script>
     </head> 
     <head>
         <body>
-            <form name = "EnterName"></form>
-                <h2>Enter name:</h2>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <b>1.</b>
-                                </td>
-                                <td>Enter your name:</td>
-                                <td>
-                                    <input type="text" name="myName" size="48">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>2.</b>
-                                </td>
-                                <td>Select Your Personalized Greeting:</td>
-                                <td>
-                                    <select required>
-                                        <option value="1"> Good morning. Have a good day today!</option>
-                                        <option value="2"> Good afternoon. How are you today?</option>
-                                        <option value="3"> Good evening. How was your day?</option>
-                                        <option value="4"> Grettings!</option>
-                                        <option value="5"> Hello! How are you doing?</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>3.</b>
-                                </td>
-                                <td>Click Button When Done:</td>
-                                <td>
-                                    <input type="button" value="Done" onclick="getName()">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <b>4.</b>
-                                </td>
-                                <td>Here's Your Personalized Greeting:</td>
-                                <td>
-                                    <input type="text" name="Greeting" size="40">
-                                </td>										 
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p></p>
-                </form>
-            </div>
-		</section>
-	</body>
+            <form name = "EnterName">
+                 <h2>Enter name:</h2>
+                 <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <b>1.</b>
+                            </td>
+                            <td>Enter your name:</td>
+                            <td>
+                                <input type="input" name="name" onblur="handleChange()" size="40">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>2.</b>
+                            </td>
+                            <td>Select Your Personalized Greeting:</td>
+                            <td>
+                                <select name="greeting" onchange="handleChange()">
+                                    <option disabled selected> Choose a Greeting</option>
+                                    <option > Good morning</option>
+                                    <option > Good afternoon</option>
+                                    <option > Good evening</option>
+                                    <option > Grettings</option>
+                                    <option > Hello</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>3.</b>
+                            </td>
+                            <td>Click Button When Done:</td>
+                            <td>
+                                <input type="button" value="Done" onclick="getGreeting()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <b>4.</b>
+                            </td>
+                            <td>Here's Your Personalized Greeting:</td>
+                            <td>
+                                <input type="input" name="message" value=" " size="40">
+                            </td>										 
+                        </tr>
+                    </tbody>
+                </table>
+              </form>  
+		    </section>
+        </body>
+    </head>
 </html>
